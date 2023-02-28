@@ -1,37 +1,36 @@
-import { screen } from '@testing-library/react';
-import { MenuLink } from '.';
-import { renderTheme } from '../../styles/render-theme';
+import { screen } from "@testing-library/react";
+import { MenuLink } from ".";
+import { renderTheme } from "../../styles/render-theme";
 
-describe('<MenuLink />', () => {
-  it('should render a link', () => {
+describe("<MenuLink />", () => {
+  it("should render a link", () => {
     renderTheme(<MenuLink link="http://localhost">Children</MenuLink>);
-    expect(screen.getByRole('link', { name: 'Children' })).toHaveAttribute(
-      'target',
-      '_self',
+    expect(screen.getByRole("link", { name: "Children" })).toHaveAttribute(
+      "target",
+      "_self"
     );
   });
 
-  it('should render open in a new tab', () => {
+  it("should render open in a new tab", () => {
     renderTheme(
       <MenuLink link="http://localhost" newTab={true}>
         Children
-      </MenuLink>,
+      </MenuLink>
     );
-    expect(screen.getByRole('link', { name: 'Children' })).toHaveAttribute(
-      'target',
-      '_blank',
+    expect(screen.getByRole("link", { name: "Children" })).toHaveAttribute(
+      "target",
+      "_blank"
     );
   });
 
-  it('should render open in a new tabb', () => {
+  it("should render open in a new tabb", () => {
     const { container } = renderTheme(
       <MenuLink link="http://localhost" newTab={false}>
         Children
-      </MenuLink>,
+      </MenuLink>
     );
     // eslint-disable-next-line testing-library/no-node-access
-    expect(container.firstChild)
-      .toMatchInlineSnapshot(`
+    expect(container.firstChild).toMatchInlineSnapshot(`
       .c0 {
         display: block;
         -webkit-text-decoration: none;
@@ -41,10 +40,11 @@ describe('<MenuLink />', () => {
         color: #0A1128;
         position: relative;
       }
+
       .c0::after {
-        content: '';
+        content: "";
         position: absolute;
-        bottom: 0;
+        bottom: 0.76rem;
         left: 50%;
         width: 0;
         height: 0.2rem;
@@ -52,10 +52,12 @@ describe('<MenuLink />', () => {
         -webkit-transition: all 300ms ease-in-out;
         transition: all 300ms ease-in-out;
       }
+
       .c0:hover::after {
         left: 25%;
         width: 50%;
       }
+
       <a
         class="c0"
         href="http://localhost"

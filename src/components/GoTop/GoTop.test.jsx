@@ -1,16 +1,22 @@
-import { screen } from '@testing-library/react';
-import { GoTop } from '.';
-import { renderTheme } from '../../styles/render-theme';
+import { screen } from "@testing-library/react";
+import { GoTop } from ".";
+import { renderTheme } from "../../styles/render-theme";
 
-describe('<GoTop />', () => {
-  it('should render a go to top button', () => {
+describe("<GoTop />", () => {
+  it("should render a go to top button", () => {
     const { container } = renderTheme(<GoTop />);
-    expect(screen.getByRole('link', { name: 'Go to top' })).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: 'Go to top' })).toHaveAttribute(
-      'href',
-      '#',
+    expect(screen.getByRole("link", { name: "Go to top" })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Go to top" })).toHaveAttribute(
+      "href",
+      "#"
     );
     expect(container).toMatchInlineSnapshot(`
+      .c1 {
+        display: inline-block;
+        vertical-align: middle;
+        overflow: hidden;
+      }
+
       .c0 {
         position: fixed;
         background: #0A1128;
@@ -33,11 +39,7 @@ describe('<GoTop />', () => {
         right: 2rem;
         z-index: 6;
       }
-      .c1 {
-        display: inline-block;
-        vertical-align: middle;
-        overflow: hidden;
-      }
+
       <div>
         <a
           aria-label="Go to top"
@@ -54,11 +56,7 @@ describe('<GoTop />', () => {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M0 0h24v24H0V0z"
-              fill="none"
-            />
-            <path
-              d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z"
+              d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z"
             />
           </svg>
         </a>
