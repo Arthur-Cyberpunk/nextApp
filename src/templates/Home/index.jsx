@@ -6,12 +6,8 @@ import { GridText } from "../../components/GridText";
 import { GridTwoColum } from "../../components/GridTwoColumn";
 import config from '../../config';
 import { Base } from "../Base";
-import { PageNotFound } from "../PageNotFound";
 
 function Home({ data }) {
-  if (!data || !data.length) {
-    return <PageNotFound />;
-  }
 
   const { menu, sections, footerHtml, slug, title } = data[0];
   const { links, text, link, srcImg } = menu;
