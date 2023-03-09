@@ -11,7 +11,7 @@ describe("map-sections", () => {
     const data = mapSections();
     expect(data).toEqual([]);
   });
-  it("should render sections with correct data", () => {
+  it("should render sections with correct dat", () => {
     const data = mapSections(pagesFakeData[0].sections);
     expect(data[0].component).toBe("section.section-two-columns");
   });
